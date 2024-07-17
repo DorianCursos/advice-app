@@ -1,0 +1,52 @@
+@use '../mixins/responsive.scss' as *;
+@use '../mixins/hover.scss' as *;
+.card {
+  position: relative;
+  width: 343px;
+  padding: 1.5rem 1.5rem 4rem;
+  background-color: #313a48;
+  text-align: center;
+  border-radius: 0.625rem;
+
+  @include responsive(laptop) {
+    width: 540px;
+    padding: 3rem 3rem 4.5rem;
+  }
+
+  &__id {
+    color: #53ffaa;
+    font-size: 0.8125rem;
+    letter-spacing: 0.2162rem;
+  }
+
+  &__text {
+    font-size: 1.75rem;
+    letter-spacing: -0.0163rem;
+    color: #cee3e9;
+
+    &::before {
+      content: open-quote;
+    }
+
+    &::after {
+      content: close-quote;
+    }
+  }
+
+  &__image-container {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 64px;
+    padding: 20px;
+    border-radius: 50%;
+    background-color: #53ffaa;
+    translate: -50% 50%;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+
+    @include hover {
+      box-shadow: 0 0 20px #53ffaa;
+    }
+  }
+}
